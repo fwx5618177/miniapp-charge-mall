@@ -56,13 +56,13 @@ export default function Index() {
       id: '2',
       name: 'AirPods Pro',
       price: 1899,
-      image: 'https://img.icons8.com/color/400/000000/airpods-pro.png'
+      image: './assets/samples/phone.png'
     },
     {
       id: '3',
       name: 'MacBook Pro M2',
       price: 14999,
-      image: 'https://img.icons8.com/color/400/000000/macbook.png'
+      image: './assets/samples/airpods.png'
     },
     {
       id: '4',
@@ -113,12 +113,12 @@ export default function Index() {
       <View className='header'>
         <Image 
           className='logo' 
-          src='https://img.icons8.com/color/96/000000/shop.png'
+          src='./assets/icons/logo.svg'
           mode='aspectFit'
         />
         <View className='header-right'>
-          <AtIcon value='shopping-cart' size='24' color='#333' />
-          <AtIcon value='user' size='24' color='#333' />
+          <AtIcon value='bell' size='18' color='#333' />
+          <AtIcon value='user' size='18' color='#333' />
         </View>
       </View>
 
@@ -126,7 +126,7 @@ export default function Index() {
       <View className='banner'>
         <Image 
           className='banner-image' 
-          src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop'
+          src='./assets/samples/banner.png'
           mode='aspectFill' 
         />
         <View className='banner-text'>
