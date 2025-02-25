@@ -1,41 +1,193 @@
-@import '../../styles/variables.scss';
-@import 'taro-ui/dist/style/components/list.scss';
-@import 'taro-ui/dist/style/components/icon.scss';
+@use '../../styles/theme' as *;
+@use '../../styles/mixins' as *;
+@use 'taro-ui/dist/style/components/list' as *;
+@use 'taro-ui/dist/style/components/icon' as *;
+
+$transition-base: 0.3s ease;
 
 .recharge {
   min-height: 100vh;
-  background-color: $background-color;
-  padding-top: $spacing-medium;
+  background-color: get-neutral-color('background');
+  padding: get-spacing('medium');
+  padding-top: calc(88px + #{get-spacing('medium')}); // 为 header 留出空间
 
-  .at-list {
-    margin: 0 $spacing-medium;
-    border-radius: $border-radius-medium;
-    overflow: hidden;
+  &-header {
+    margin-bottom: get-spacing('large');
 
-    .at-list__item {
-      padding: $spacing-medium;
-      margin: 0;
+    .title {
+      font-size: get-font-size('xlarge');
+      font-weight: bold;
+      color: get-neutral-color('title');
+      display: block;
+      margin-bottom: get-spacing('mini');
+    }
+
+    .subtitle {
+      font-size: get-font-size('medium');
+      color: get-neutral-color('secondary');
+    }
+  }
+}
+
+.tab-container {
+  display: flex;
+  background-color: get-neutral-color('card');
+  border-radius: get-radius('medium');
+  padding: get-spacing('mini');
+  margin-bottom: get-spacing('medium');
+
+  .tab-item {
+    flex: 1;
+    text-align: center;
+    padding: get-spacing('small') 0;
+    font-size: get-font-size('medium');
+    color: get-neutral-color('secondary');
+    position: relative;
+    transition: all $transition-base;
+
+    &.active {
+      color: get-theme-color('primary');
+      font-weight: bold;
 
       &::after {
-        border-color: #eee;
-      }
-
-      .at-list__item-thumb {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 40px;
-        height: 40px;
-        border-radius: 50%;
+        height: 3px;
+        background-color: get-theme-color('primary');
+        border-radius: 2px;
       }
+    }
+  }
+}
 
-      .at-list__item-content {
-        font-size: $font-size-medium;
-        color: $text-color;
+.recharge-content {
+  background-color: get-neutral-color('card');
+  border-radius: get-radius('medium');
+  padding: get-spacing('medium');
+
+  .phone-input {
+    display: flex;
+    align-items: center;
+    background-color: get-neutral-color('background');
+    border-radius: get-radius('small');
+    padding: get-spacing('small');
+    margin-bottom: get-spacing('medium');
+
+    .input-icon {
+      margin-right: get-spacing('small');
+      font-size: get-font-size('large');
+    }
+
+    .input {
+      flex: 1;
+      font-size: get-font-size('medium');
+      color: get-neutral-color('title');
+      
+      &::placeholder {
+        color: get-neutral-color('placeholder');
       }
+    }
+  }
 
-      .at-list__item-extra {
-        .at-icon {
-          color: $secondary-text;
+  .operator-select {
+    display: flex;
+    gap: get-spacing('small');
+    margin-bottom: get-spacing('large');
+
+    .operator-item {
+      flex: 1;
+      text-align: center;
+      padding: get-spacing('small');
+      border-radius: get-radius('small');
+      font-size: get-font-size('medium');
+      color: get-neutral-color('text');
+      background-color: get-neutral-color('background');
+      transition: all $transition-base;
+
+      &.active {
+        background-color: get-theme-color('primary', 'light');
+        color: get-neutral-color('card');
+      }
+    }
+  }
+
+  .section-title {
+    font-size: get-font-size('medium');
+    color: get-neutral-color('title');
+    margin-bottom: get-spacing('medium');
+    display: block;
+  }
+
+  .amount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: get-spacing('medium');
+    margin-bottom: get-spacing('large');
+
+    .amount-item {
+      background-color: get-neutral-color('background');
+      border-radius: get-radius('small');
+      padding: get-spacing('medium');
+      text-align: center;
+      cursor: pointer;
+      transition: all $transition-base;
+
+      &.active {
+        background-color: get-theme-color('primary', 'light');
+        
+        .amount-value,
+        .amount-face {
+          color: get-neutral-color('card');
         }
       }
+
+      .amount-value {
+        font-size: get-font-size('medium');
+        color: get-neutral-color('title');
+        margin-bottom: get-spacing('mini');
+        display: block;
+      }
+
+      .amount-face {
+        font-size: get-font-size('small');
+        color: get-neutral-color('secondary');
+      }
+    }
+  }
+
+  .custom-amount {
+    margin-bottom: get-spacing('large');
+
+    .custom-input {
+      width: 100%;
+      background-color: get-neutral-color('background');
+      border-radius: get-radius('small');
+      padding: get-spacing('medium');
+      font-size: get-font-size('medium');
+      color: get-neutral-color('title');
+
+      &::placeholder {
+        color: get-neutral-color('placeholder');
+      }
+    }
+  }
+
+  .submit-button {
+    background: get-theme-color('primary');
+    color: get-neutral-color('card');
+    text-align: center;
+    padding: get-spacing('medium');
+    border-radius: get-radius('small');
+    font-size: get-font-size('medium');
+    font-weight: bold;
+    transition: opacity $transition-base;
+
+    &:active {
+      opacity: 0.8;
     }
   }
 } 

@@ -83,13 +83,14 @@
     }
     
     .service-icon {
-      width: 88px;
-      height: 88px;
+      width: 64px;
+      height: 64px;
       margin-bottom: $spacing-small;
       border-radius: 50%;
     }
 
     .service-text {
+      white-space: nowrap;
       font-size: $font-size-small;
       color: $text-color;
       text-align: center;

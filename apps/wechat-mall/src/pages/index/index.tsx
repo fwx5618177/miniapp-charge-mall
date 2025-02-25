@@ -2,6 +2,7 @@ import { View, Text, Image } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
 import { useState } from 'react'
 import { AtIcon, AtTabBar } from 'taro-ui'
+import Header from '../../components/Header'
 import Loading from '../../components/Loading'
 import './index.scss'
 
@@ -24,22 +25,22 @@ export default function Index() {
 
   const services: ServiceItem[] = [
     {
-      icon: 'https://img.icons8.com/color/96/000000/phone.png',
+      icon: 'https://img.icons8.com/color/64/000000/phone.png',
       text: '话费充值',
       path: '/pages/recharge/mobile/index'
     },
     {
-      icon: 'https://img.icons8.com/color/96/000000/lightning-bolt.png',
+      icon: 'https://img.icons8.com/color/64/000000/lightning-bolt.png',
       text: '电费缴纳',
       path: '/pages/recharge/electricity/index'
     },
     {
-      icon: 'https://img.icons8.com/color/96/000000/wifi.png',
+      icon: 'https://img.icons8.com/color/64/000000/wifi.png',
       text: '流量充值',
       path: '/pages/recharge/data/index'
     },
     {
-      icon: 'https://img.icons8.com/color/96/000000/vip.png',
+      icon: 'https://img.icons8.com/color/64/000000/vip.png',
       text: '会员充值',
       path: '/pages/recharge/vip/index'
     }
@@ -109,18 +110,7 @@ export default function Index() {
 
   return (
     <View className='index'>
-      {/* Header */}
-      <View className='header'>
-        <Image 
-          className='logo' 
-          src='./assets/icons/logo.svg'
-          mode='aspectFit'
-        />
-        <View className='header-right'>
-          <AtIcon value='bell' size='18' color='#333' />
-          <AtIcon value='user' size='18' color='#333' />
-        </View>
-      </View>
+      <Header />
 
       {/* Banner区域 */}
       <View className='banner'>
