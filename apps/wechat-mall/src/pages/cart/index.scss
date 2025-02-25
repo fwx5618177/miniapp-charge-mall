@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+@import 'taro-ui/dist/style/components/list.scss';
+@import 'taro-ui/dist/style/components/icon.scss';
+
+.cart {
+  min-height: 100vh;
+  background-color: $background-color;
+  padding-top: $spacing-medium;
+
+  .at-list {
+    margin: 0 $spacing-medium;
+    border-radius: $border-radius-medium;
+    overflow: hidden;
+  }
+} 

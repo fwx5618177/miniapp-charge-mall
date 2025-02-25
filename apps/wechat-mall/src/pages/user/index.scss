@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+@import 'taro-ui/dist/style/components/list.scss';
+@import 'taro-ui/dist/style/components/icon.scss';
+@import 'taro-ui/dist/style/components/avatar.scss';
+
+.user {
+  min-height: 100vh;
+  background-color: $background-color;
+
+  &-header {
+    background-color: $primary-color;
+    padding: $spacing-large $spacing-medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $spacing-medium;
+  }
+
+  &-nickname {
+    color: $white;
+    font-size: $font-size-large;
+    margin-top: $spacing-medium;
+  }
+
+  .at-list {
+    margin: 0 $spacing-medium;
+    border-radius: $border-radius-medium;
+    overflow: hidden;
+
+    .at-list__item {
+      margin-left: 0;
+      padding: $spacing-medium;
+
+      &-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      &-content {
+        font-size: $font-size-medium;
+        color: $text-color;
+      }
+    }
+  }
+} 

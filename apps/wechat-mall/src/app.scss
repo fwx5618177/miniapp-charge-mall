@@ -1,0 +1,82 @@
+@use 'sass:map';
+@use './styles/theme' as *;
+@use './styles/mixins' as *;
+@use 'taro-ui/dist/style/index.scss' as taro;
+
+page {
+  background-color: get-neutral-color('background');
+  color: get-neutral-color('text');
+  font-size: get-font-size('medium');
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+// 通用容器样式
+.container {
+  @include container;
+}
+
+// 卡片样式
+.card {
+  background-color: get-neutral-color('card');
+  border-radius: get-radius('medium');
+  padding: get-spacing('medium');
+  margin-bottom: get-spacing('medium');
+  box-shadow: get-shadow('small');
+}
+
+// 标题样式
+.title {
+  color: get-neutral-color('title');
+  font-size: get-font-size('large');
+  font-weight: bold;
+  margin-bottom: get-spacing('small');
+}
+
+// 分割线
+.divider {
+  height: 1px;
+  background-color: get-neutral-color('divider');
+  margin: get-spacing('medium') 0;
+}
+
+// 按钮基础样式
+.button {
+  border-radius: get-radius('small');
+  padding: get-spacing('small') get-spacing('medium');
+  font-size: get-font-size('medium');
+  transition: all $animation-duration $animation-timing;
+  
+  &--primary {
+    @include gradient-bg('primary');
+    color: get-neutral-color('card');
+  }
+  
+  &--accent {
+    @include gradient-bg('accent');
+    color: get-neutral-color('card');
+  }
+}
+
+// 文本样式
+.text {
+  &--primary {
+    color: get-theme-color('primary');
+  }
+  
+  &--secondary {
+    color: get-neutral-color('secondary');
+  }
+  
+  &--success {
+    color: get-theme-color('functional', 'success');
+  }
+  
+  &--warning {
+    color: get-theme-color('functional', 'warning');
+  }
+  
+  &--error {
+    color: get-theme-color('functional', 'error');
+  }
+}

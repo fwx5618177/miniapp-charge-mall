@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+@import 'taro-ui/dist/style/components/list.scss';
+@import 'taro-ui/dist/style/components/icon.scss';
+
+.recharge {
+  min-height: 100vh;
+  background-color: $background-color;
+  padding-top: $spacing-medium;
+
+  .at-list {
+    margin: 0 $spacing-medium;
+    border-radius: $border-radius-medium;
+    overflow: hidden;
+
+    .at-list__item {
+      padding: $spacing-medium;
+      margin: 0;
+
+      &::after {
+        border-color: #eee;
+      }
+
+      .at-list__item-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .at-list__item-content {
+        font-size: $font-size-medium;
+        color: $text-color;
+      }
+
+      .at-list__item-extra {
+        .at-icon {
+          color: $secondary-text;
+        }
+      }
+    }
+  }
+} 

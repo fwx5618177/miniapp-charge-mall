@@ -1,0 +1,93 @@
+@use 'theme' as *;
+@use 'sass:map';
+
+// 获取主题色
+@function get-theme-color($type, $variant: 'base') {
+  @if map.has-key($theme, $type) {
+    $color-map: map.get($theme, $type);
+    @if map.has-key($color-map, $variant) {
+      @return map.get($color-map, $variant);
+    }
+  }
+  @return null;
+}
+
+// 获取中性色
+@function get-neutral-color($key) {
+  $neutral-map: map.get($theme, 'neutral');
+  @if map.has-key($neutral-map, $key) {
+    @return map.get($neutral-map, $key);
+  }
+  @return null;
+}
+
+// 获取间距
+@function get-spacing($key) {
+  @if map.has-key($spacing, $key) {
+    @return map.get($spacing, $key);
+  }
+  @return null;
+}
+
+// 获取字体大小
+@function get-font-size($key) {
+  @if map.has-key($font-size, $key) {
+    @return map.get($font-size, $key);
+  }
+  @return null;
+}
+
+// 获取圆角
+@function get-radius($key) {
+  @if map.has-key($radius, $key) {
+    @return map.get($radius, $key);
+  }
+  @return null;
+}
+
+// 获取阴影
+@function get-shadow($key) {
+  @if map.has-key($shadow, $key) {
+    @return map.get($shadow, $key);
+  }
+  @return null;
+}
+
+// 渐变背景混入
+@mixin gradient-bg($type) {
+  $gradients: map.get($theme, 'gradient');
+  @if map.has-key($gradients, $type) {
+    background: map.get($gradients, $type);
+  }
+}
+
+// 文本溢出省略
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// flex 布局助手
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// 响应式容器
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 get-spacing('medium');
+  box-sizing: border-box;
+} 

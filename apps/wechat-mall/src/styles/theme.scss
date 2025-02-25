@@ -1,0 +1,82 @@
+@use 'sass:map';
+
+// 主题色配置
+$theme: (
+  // 主色系
+  primary: (
+    light: #4C6EEE,
+    base: #2B4ACB,
+    dark: #1A2E7D,
+  ),
+  
+  // 辅助色系
+  accent: (
+    light: #FF8F8F,
+    base: #FF6B6B,
+    dark: #E64545,
+  ),
+  
+  // 功能色
+  functional: (
+    success: #2ECC71,
+    warning: #F1C40F,
+    error: #E74C3C,
+    info: #3498DB,
+  ),
+  
+  // 中性色
+  neutral: (
+    title: #2C3E50,    // 标题文字
+    text: #34495E,     // 正文文字
+    secondary: #7F8C8D, // 次要文字
+    placeholder: #95A5A6, // 占位文字
+    border: #E0E6ED,    // 边框
+    divider: #EDF2F7,   // 分割线
+    background: #F8FAFC, // 背景
+    card: #FFFFFF,      // 卡片背景
+  ),
+  
+  // 渐变色
+  gradient: (
+    primary: linear-gradient(135deg, #4C6EEE 0%, #2B4ACB 100%),
+    accent: linear-gradient(135deg, #FF8F8F 0%, #FF6B6B 100%),
+  )
+);
+
+// 间距配置
+$spacing: (
+  mini: 8px,
+  small: 16px,
+  medium: 24px,
+  large: 32px,
+  xlarge: 40px,
+);
+
+// 字体大小配置
+$font-size: (
+  mini: 20px,
+  small: 24px,
+  medium: 28px,
+  large: 32px,
+  xlarge: 36px,
+  xxlarge: 40px,
+);
+
+// 圆角配置
+$radius: (
+  small: 8px,
+  medium: 16px,
+  large: 24px,
+  circle: 50%,
+);
+
+// 阴影配置
+$shadow: (
+  small: 0 2px 4px rgba(0, 0, 0, 0.05),
+  medium: 0 4px 8px rgba(0, 0, 0, 0.1),
+  large: 0 8px 16px rgba(0, 0, 0, 0.15),
+);
+
+// 动画配置
+$animation-duration: 0.3s;
+$animation-timing: cubic-bezier(0.4, 0, 0.2, 1); 

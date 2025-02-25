@@ -1,0 +1,10 @@
+/* stylelint-disable */
+@use 'taro-ui/dist/style/index.scss' as taro;
+
+// Import only what we need and namespace them
+@use 'taro-ui/dist/style/components/icon.scss' as *;
+@use 'taro-ui/dist/style/components/list.scss' as *;
+@use 'taro-ui/dist/style/components/loading.scss' as *;
+@use 'taro-ui/dist/style/components/tab-bar.scss' as *;
+@use 'taro-ui/dist/style/components/avatar.scss' as *;
+@use 'taro-ui/dist/style/components/activity-indicator.scss' as *; 
