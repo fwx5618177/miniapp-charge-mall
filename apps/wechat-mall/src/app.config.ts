@@ -20,26 +20,26 @@ export default defineAppConfig({
       {
         pagePath: 'pages/index/index',
         text: '首页',
-        iconPath: './assets/icons/home.png',
-        selectedIconPath: './assets/icons/home-active.png'
+        iconPath: './assets/icons/home.svg',
+        selectedIconPath: './assets/icons/home-active.svg'
       },
       {
         pagePath: 'pages/recharge/index',
         text: '充值',
-        iconPath: './assets/icons/recharge.png',
-        selectedIconPath: './assets/icons/recharge-active.png'
+        iconPath: './assets/icons/recharge.svg',
+        selectedIconPath: './assets/icons/recharge-active.svg'
       },
       {
         pagePath: 'pages/cart/index',
         text: '购物车',
-        iconPath: './assets/icons/cart.png',
-        selectedIconPath: './assets/icons/cart-active.png'
+        iconPath: './assets/icons/cart.svg',
+        selectedIconPath: './assets/icons/cart-active.svg'
       },
       {
         pagePath: 'pages/user/index',
         text: '我的',
-        iconPath: './assets/icons/user.png',
-        selectedIconPath: './assets/icons/user-active.png'
+        iconPath: './assets/icons/user.svg',
+        selectedIconPath: './assets/icons/user-active.svg'
       }
     ]
   }
